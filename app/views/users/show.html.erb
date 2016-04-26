@@ -1,5 +1,35 @@
-<h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
+<div class="row">
+    <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+    </h1>
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th class="col-md-2">プロフィール</th>
+            <td><%= @user.profile %></td>
+        </tr>
+        <tr>
+            <th class="col-md-2">メールアドレス</th>
+            <td><%= @user.email %></td>
+        </tr>
+        <tr>
+            <th class="col-md-2">地域</th>
+            <td><%= @user.region %></td>
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+</div>
+
+
+   
+   
     
-</h1>
