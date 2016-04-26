@@ -7,6 +7,10 @@ module SessionsHelper
         !!current_user
     end
     
+    def log_in(user)
+        session[:user_id] = user.id
+    end
+    
     def store_location
         session[:forwarding_url] = request.url if request.get?
     end
