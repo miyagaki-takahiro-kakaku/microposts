@@ -1,35 +1,19 @@
 <div class="row">
-    <h1>
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-    </h1>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </div>
 </div>
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-
-
-
-<table class="table">
-    <tbody>
-        <tr>
-            <th class="col-md-2">プロフィール</th>
-            <td><%= @user.profile %></td>
-        </tr>
-        <tr>
-            <th class="col-md-2">メールアドレス</th>
-            <td><%= @user.email %></td>
-        </tr>
-        <tr>
-            <th class="col-md-2">地域</th>
-            <td><%= @user.region %></td>
-        </tr>
-    </tbody>
-</table>
-
-    </div>
-</div>
-
-
-   
-   
-    
